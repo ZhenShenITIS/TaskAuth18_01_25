@@ -13,7 +13,7 @@ public class PasswordSource {
         Matcher matcher = pattern.matcher(password);
 
         if ((password.length() < 8) || !matcher.matches()) {
-            throw new WrongLoginException();
+            throw new WrongPasswordException();
         }
         return password;
     }
