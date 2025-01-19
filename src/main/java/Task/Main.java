@@ -35,19 +35,24 @@ public class Main {
         while (n < users.length) {
             User currentUser = users[n];
             if (userCheck(currentUser, login, password) == Role.ADMIN) {
-                System.out.println("1. File \n" +
-                        "2. Create new User \n" +
-                        "3. exit");
                 currentRole = Role.ADMIN;
             }
             if (userCheck(currentUser, login, password) == Role.USER) {
-                System.out.println("1. File \n" +
-                        "2. Get play list \n" +
-                        "3. exit");
                 currentRole = Role.USER;
 
             }
             n++;
+        }
+        if (currentRole == Role.ADMIN) {
+            System.out.println("1. File \n" +
+                    "2. Create new User \n" +
+                    "3. exit");
+        } else if (currentRole == Role.USER) {
+            System.out.println("1. File \n" +
+                    "2. Get play list \n" +
+                    "3. exit");
+        } else if (currentRole == null) {
+            System.out.println("1. exit");
         }
 
 
